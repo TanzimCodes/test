@@ -17,7 +17,6 @@ jobs:
   deploy-to-production:
     runs-on: ubuntu-latest
     environment: production
-    needs: deploy-to-staging
     if: github.ref == 'refs/heads/main'
     steps:
       - name: deploy to deploy-to-prod

@@ -1,5 +1,0 @@
-1. Create a new GitHub workflow that will automatically run every time a new Pull Request is created and it will add a "needs-review" label to it. 
-for example .github/workflows/label.yml
- 
-2. Write a JavaScript action that will automatically run every time a new Pull Request is created, and it will add a needs-review label to it.
-for example index.js

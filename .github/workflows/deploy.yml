@@ -1,0 +1,26 @@
+name: test
+
+on:
+  push:
+    branches: [main, develop, "feature/*"]
+  workflow_dispatch:
+
+jobs:
+  deploy-to-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: deploy to deploy-to-staging
+        run: 
+         echo "🚀 Deploying to Staging env"
+  
+  deploy-to-production:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: deploy-to-staging
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: deploy to deploy-to-prod
+        run: 
+         echo "🚀 Deploying to prod env"
+
